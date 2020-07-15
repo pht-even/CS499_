@@ -9,42 +9,42 @@
         "ID": 1,
         "Name": "DEFAULT",
         "Position": "ADMIN",
-        "PassHash": "password"
+        "PassHash": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
     },
     "griffin.keyes": {
-        "ID": 2,
+        "ID": 3,
         "Name": "Griffin Keyes",
         "Position": "Zookeeper",
-        "PassHash": ""
+        "PassHash": "c97e5cd9864186836926aebe363c05d9c6809cbab8f31347cbd4c535f28642e7"
     },
     "rosario.dawson": {
-        "ID": 3,
+        "ID": 4,
         "Name": "Rosario Dawson",
         "Position": "Admin",
-        "PassHash": ""
+        "PassHash": "ffc757a0caa4d130876aa2abfbfd64107a6319b264f670d463e3ddf0e94f01a2"
     },
     "bernie.gorilla": {
-        "ID": 2,
+        "ID": 5,
         "Name": "Bernie Gorilla",
         "Position": "Veterinarian",
-        "PassHash": ""
+        "PassHash": "1ba133eccdfc4e5ca3405dfd70c11360af038106c9eebdde504a4b14c94b8557"
     },
     "donald.monkey": {
-        "ID": 2,
+        "ID": 6,
         "Name": "Donald Monkey",
         "Position": "Zookeeper",
-        "PassHash": ""
+        "PassHash": "ac3aac1c6ebfdd95d0afa7fa50b37d1cf46d37a81d710617c0d220113e9bca40"
     },
     "jerome.grizzlybear": {
-        "ID": 2,
+        "ID": 7,
         "Name": "Jerome Grizzlybear",
         "Position": "Veterinarian",
-        "PassHash": ""
+        "PassHash": "fd2efcdffff3d897f45b9c94a994a8eddc394a08503627ef7f70f4d146cb7106"
     },
     "bruce.grizzlybear": {
-        "ID": 2,
+        "ID": 8,
         "Name": "Bruce Grizzlybear",
         "Position": "Admin",
-        "PassHash": ""
+        "PassHash": "1c8bfe8f801d79745c4631d09fff36c82aa37fc4cce4fc946683d7b336b63032"
     }
 }
