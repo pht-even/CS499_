@@ -5,14 +5,15 @@ import os
 from saveEmployees import *
 from loadEmployees import *
 
-RETRIES = 3
+RUNNING = True
+SAVED_RESPONSE = ""
+VALID = False
+
 userName = ""
 userPass = ""
-VALID = False
+userResponse = ""
 passOK = False
 userOK = False
-userResponse = ""
-SAVED_RESPONSE = ""
 
 # Generating the dictionary from the saved JSON file
 ZOO_EMPLOYEES = dict(loadEmployees())
@@ -23,7 +24,7 @@ print(ZOO_EMPLOYEES['Employee1234'])
 print("Welcome to the Megalopolis Zoo Authentication System.\nType \"Q\' to quit.")
 
 # Keep program running, exit when
-while RETRIES > 0:
+while RUNNING:
 
     userResponse = input("New Employee? (Y/N)\n")
 
@@ -36,33 +37,37 @@ while RETRIES > 0:
     elif userResponse.upper() == "N":
         print("Active User")
 
-        while not userOK:
-
+        # get the username
+        while RUNNING and not userOK:
             userResponse = input("Please enter your username.\n")
-            SAVED_RESPONSE = userResponse
+            # Quitting
             if userResponse.upper() == "Q":
                 print("Goodbye.")
-                RETRIES = 0
+                RUNNING = False
                 break
-
+            # Look for the entered username
             else:
                 if userResponse in ZOO_EMPLOYEES:
-                    print("Welcome")
+                    print("Accepted")
+                    # save the response for later use
+                    SAVED_RESPONSE = userResponse
                     userOK = True
                 else:
                     print("Employee not found")
 
-        while not passOK:
-
+        # Check the password for a match under the user's information
+        while RUNNING and not passOK:
             userResponse = input("Please enter your password")
+            # Quitting
             if userResponse.upper() == "Q":
                 print("Goodbye.")
+                RUNNING = False
                 break
-
             else:
                 if userResponse in ZOO_EMPLOYEES[SAVED_RESPONSE]["PassHash"]:
                     passOK = True
-                    print("Welcome,", SAVED_RESPONSE)
+                    print("Password accepted.\nWelcome,", SAVED_RESPONSE)
+                    RUNNING = False
                     break
                 else:
                     print("That password is incorrect, please try again or type \"q\"")
@@ -70,17 +75,7 @@ while RETRIES > 0:
     # Exit from the service when "Q" is pressed
     elif userResponse.upper() == "Q":
         print("Thank you fo using the Megalopolis Zoo Authentication System.\nGoodbye.")
-        break
+        RUNNING = False
 
-    # Invalid responses have three chances to enter a valid response
     else:
-        if RETRIES > 1:
-            print("Please enter a valid response or type \"Q\" to exit.")
-            RETRIES -= 1
-
-        else:
-            RETRIES -= 1
-            print("goodbye")
-            break
-
-        print("Retries left: ", RETRIES)
+        print(userResponse, "is not a valid response.")
