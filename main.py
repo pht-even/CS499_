@@ -1,9 +1,6 @@
-import hashlib
-import binascii
-import json
-import os
 from saveEmployees import *
 from loadEmployees import *
+from hashPassword import *
 
 RUNNING = True
 SAVED_RESPONSE = ""
@@ -57,14 +54,14 @@ while RUNNING:
 
         # Check the password for a match under the user's information
         while RUNNING and not passOK:
-            userResponse = input("Please enter your password")
+            userResponse = input("Please enter your password\n")
             # Quitting
             if userResponse.upper() == "Q":
                 print("Goodbye.")
                 RUNNING = False
                 break
             else:
-                if userResponse in ZOO_EMPLOYEES[SAVED_RESPONSE]["PassHash"]:
+                if checkPass(userResponse, ZOO_EMPLOYEES[SAVED_RESPONSE]["PassHash"]):
                     passOK = True
                     print("Password accepted.\nWelcome,", SAVED_RESPONSE)
                     RUNNING = False
