@@ -1,0 +1,14 @@
+{
+    "Employee1234": {
+        "ID": 0,
+        "Name": "DEFAULT",
+        "Position": "ADMIN",
+        "PassHash": "EE3487EF"
+    },
+    "ADMIN": {
+        "ID": 1,
+        "Name": "DEFAULT",
+        "Position": "ADMIN",
+        "PassHash": "EE3487EF"
+    }
+}
