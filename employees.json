@@ -10,5 +10,41 @@
         "Name": "DEFAULT",
         "Position": "ADMIN",
         "PassHash": "password"
+    },
+    "griffin.keyes": {
+        "ID": 2,
+        "Name": "Griffin Keyes",
+        "Position": "Zookeeper",
+        "PassHash": ""
+    },
+    "rosario.dawson": {
+        "ID": 3,
+        "Name": "Rosario Dawson",
+        "Position": "Admin",
+        "PassHash": ""
+    },
+    "bernie.gorilla": {
+        "ID": 2,
+        "Name": "Bernie Gorilla",
+        "Position": "Veterinarian",
+        "PassHash": ""
+    },
+    "donald.monkey": {
+        "ID": 2,
+        "Name": "Donald Monkey",
+        "Position": "Zookeeper",
+        "PassHash": ""
+    },
+    "jerome.grizzlybear": {
+        "ID": 2,
+        "Name": "Jerome Grizzlybear",
+        "Position": "Veterinarian",
+        "PassHash": ""
+    },
+    "bruce.grizzlybear": {
+        "ID": 2,
+        "Name": "Bruce Grizzlybear",
+        "Position": "Admin",
+        "PassHash": ""
     }
 }
