@@ -9,6 +9,6 @@
         "ID": 1,
         "Name": "DEFAULT",
         "Position": "ADMIN",
-        "PassHash": "EE3487EF"
+        "PassHash": "password"
     }
 }
