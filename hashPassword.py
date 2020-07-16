@@ -1,5 +1,7 @@
 import hashlib
 
+# Functions for hashing passwords
+
 
 def makeHash(password):
     return hashlib.sha256(str.encode(password)).hexdigest()
