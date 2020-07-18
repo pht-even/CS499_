@@ -1,12 +1,12 @@
 {
     "Employee1234": {
         "Name": "DEFAULT",
-        "Position": "ADMIN",
+        "Position": "Admin",
         "PassHash": "EE3487EF"
     },
     "ADMIN": {
         "Name": "DEFAULT",
-        "Position": "ADMIN",
+        "Position": "Admin",
         "PassHash": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
     },
     "griffin.keyes": {
@@ -46,7 +46,7 @@
     },
     "steve.test": {
         "Name": "Steven McDaniel",
-        "Position": "Job",
+        "Position": "Admin",
         "PassHash": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
     }
 }
