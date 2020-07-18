@@ -1,0 +1,12 @@
+# THIS FILE IS FOR DEMONSTRATION PURPOSES ONLY                 #
+# Enter the users username and password to access their page.  #
+################################################################
+
+Username            |   Password             |   Position
+----------------------------------------------------------------
+griffin.keyes       |   "alphabet soup"      |   zookeeper
+rosario.dawson 	    |   "animal doctor"      |   admin
+bernie.gorilla      |   "secret password"    |   veterinarian
+donald.monkey       |   "M0nk3y business"    |   zookeeper
+jerome.grizzlybear  |   "grizzly1234"        |   veterinarian
+bruce.grizzlybear   |   "letmein"            |   admin
