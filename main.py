@@ -185,13 +185,13 @@ while RUNNING:
 
                     # Loading the specific job page of the employee from a file
                     try:
-                        if ZOO_EMPLOYEES[SAVED_RESPONSE]["Position"] == "Admin":
+                        if ZOO_EMPLOYEES[SAVED_RESPONSE]["Position"].upper() == "ADMIN":
                             OPEN_PAGE = open("helloAdmin.txt", "r")
 
-                        elif ZOO_EMPLOYEES[SAVED_RESPONSE]["Position"] == "Veterinarian":
+                        elif ZOO_EMPLOYEES[SAVED_RESPONSE]["Position"].upper() == "VETERINARIAN":
                             OPEN_PAGE = open("helloVet.txt", "r")
 
-                        elif ZOO_EMPLOYEES[SAVED_RESPONSE]["Position"] == "Zookeeper":
+                        elif ZOO_EMPLOYEES[SAVED_RESPONSE]["Position"].uuper() == "ZOOKEEPER":
                             OPEN_PAGE = open("helloZookeeper.txt", "r")
 
                         else:
