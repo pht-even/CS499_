@@ -15,6 +15,7 @@ from hashPassword import *
 RUNNING = True
 SAVED_RESPONSE = ""
 SECTION = "RealName"
+OPEN_PAGE = ""
 
 # User response is used multiple times and always cleared after use
 userResponse = ""
@@ -30,20 +31,20 @@ userOK = False
 # Generating the dictionary from the saved JSON file
 ZOO_EMPLOYEES = dict(loadEmployees())
 
-print("Welcome to the Megalopolis Zoo Authentication System.\nType \"Q\' to quit.")
+print("Welcome to the Megalopolis Zoo Authentication System.\n")
 
 # Keep program running, exit when
 while RUNNING:
 
-    userResponse = input("New Employee? (Y/N)\n")
+    userResponse = input("Please select an option:\n1 - New Employee\n2 - Current Employee\n3- Quit\n")
 
     # Branch depending on yes, no, quit, or invalid answer
     # Creating a new employee
-    if userResponse.upper() == "Y" and SECTION != "Complete":
+    if userResponse == "1" and SECTION != "Complete":
         print("New User\n")
 
         # These sections are for obtaining information via user input
-        # Reponses must be valid and will ask for reentering if not
+        # Responses must be valid and will ask for reentering if not
 
         # This section takes and stores the users actual name for later use
         while SECTION == "RealName":
@@ -76,10 +77,10 @@ while RUNNING:
 
         # This section obtains the job assignment
         while SECTION == "Job":
-            userResponse = input("Please enter your position.\n")
+            userResponse = input("Please enter your position. (Admin, Veterinarian, Zookeeper\n")
             SAVED_RESPONSE = userResponse
 
-            print("You have entered:", SAVED_RESPONSE, "as your job. is this correct?")
+            print("You have entered:", SAVED_RESPONSE, "as your job. Is this correct?")
             userResponse = input()
 
             if userResponse.upper() == "Y":
@@ -146,7 +147,7 @@ while RUNNING:
             RUNNING = False
 
     # Login as current employee
-    elif userResponse.upper() == "N":
+    elif userResponse == "2":
         print("Active User")
 
         # get the username
@@ -163,6 +164,7 @@ while RUNNING:
                     print("Accepted")
                     # save the response for later use
                     SAVED_RESPONSE = userResponse
+                    userResponse = ""
                     userOK = True
                 else:
                     print("Employee not found")
@@ -180,14 +182,36 @@ while RUNNING:
                 if checkPass(userResponse, ZOO_EMPLOYEES[SAVED_RESPONSE]["PassHash"]):
                     passOK = True
                     print("Password accepted.\nWelcome,", SAVED_RESPONSE)
+
+                    # Loading the specific job page of the employee from a file
+                    try:
+                        if ZOO_EMPLOYEES[SAVED_RESPONSE]["Position"] == "Admin":
+                            OPEN_PAGE = open("helloAdmin.txt", "r")
+
+                        elif ZOO_EMPLOYEES[SAVED_RESPONSE]["Position"] == "Veterinarian":
+                            OPEN_PAGE = open("helloVet.txt", "r")
+
+                        elif ZOO_EMPLOYEES[SAVED_RESPONSE]["Position"] == "Zookeeper":
+                            OPEN_PAGE = open("helloZookeeper.txt", "r")
+
+                        else:
+                            print("Your job page has not been implemented at this time.")
+
+                    except:
+                        print("An error occurred when loading the job file.")
+
                     RUNNING = False
                     break
                 else:
                     print("That password is incorrect, please try again or type \"q\"")
 
     # Exit from the service when "Q" is pressed
-    elif userResponse.upper() == "Q":
+    elif userResponse.upper() == "Q" or "3":
         print("Thank you fo using the Megalopolis Zoo Authentication System.\nGoodbye.")
         RUNNING = False
     else:
         print(userResponse, "is not a valid response.")
+
+# Show the user their page if it exists
+if OPEN_PAGE != "":
+    print(OPEN_PAGE.read())
