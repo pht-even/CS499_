@@ -1,14 +1,4 @@
 {
-    "Employee1234": {
-        "Name": "DEFAULT",
-        "Position": "Admin",
-        "PassHash": "EE3487EF"
-    },
-    "ADMIN": {
-        "Name": "DEFAULT",
-        "Position": "Admin",
-        "PassHash": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
-    },
     "griffin.keyes": {
         "Name": "Griffin Keyes",
         "Position": "Zookeeper",
@@ -43,10 +33,5 @@
         "Name": "Steven McDaniel",
         "Position": "Dev",
         "PassHash": "0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e"
-    },
-    "steve.test": {
-        "Name": "Steven McDaniel",
-        "Position": "Admin",
-        "PassHash": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
     }
 }
