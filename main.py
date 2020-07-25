@@ -40,7 +40,7 @@ print("Welcome to the Megalopolis Zoo Authentication System.\n")
 # Keep program running, exit when
 while RUNNING:
 
-    userResponse = input("Please select an option:\n1 - New Employee\n2 - Current Employee\n3- Quit\n")
+    userResponse = input("Please select an option:\n1 - New Employee\n2 - Current Employee\nQ- Quit\n")
 
     # Branch depending on yes, no, quit, or invalid answer
     # Creating a new employee
